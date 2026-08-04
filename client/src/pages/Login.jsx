@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
+import toast from "react-hot-toast";
 
 const Login = () => {
 
@@ -50,7 +51,7 @@ const Login = () => {
         JSON.stringify(res.data.user)
       );
 
-      alert("Login Successful!");
+      toast.success("Login Successful!");
 
       navigate("/dashboard");
 
@@ -58,10 +59,10 @@ const Login = () => {
 
       console.error(error);
 
-      alert(
+      toast.error(
         error.response?.data?.message ||
         "Something went wrong."
-      );
+    );
 
     } finally {
 

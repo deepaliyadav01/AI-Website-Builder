@@ -1,5 +1,6 @@
 import { useState } from "react";
 import API from "../services/api";
+import toast from "react-hot-toast";
 
 const Register = () => {
 
@@ -42,7 +43,7 @@ const Register = () => {
         formData
       );
 
-      alert("Registration Successful!");
+      toast.success("Registration Successful!");
 
       console.log(res.data);
 
@@ -56,10 +57,10 @@ const Register = () => {
 
       console.error(error);
 
-      alert(
-        error.response?.data?.message ||
-        "Something went wrong."
-      );
+      toast.error(
+       error.response?.data?.message ||
+       "Something went wrong."
+    );
 
     } finally {
 
