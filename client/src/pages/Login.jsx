@@ -6,6 +6,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,7 +26,14 @@ const Login = () => {
 
     e.preventDefault();
 
+    if (!formData.email || !formData.password) {
+      alert("Please fill all fields.");
+      return;
+    }
+
     try {
+
+      setLoading(true);
 
       const res = await API.post(
         "/auth/login",
@@ -41,18 +50,22 @@ const Login = () => {
         JSON.stringify(res.data.user)
       );
 
-      alert("Login Successful");
+      alert("Login Successful!");
 
       navigate("/dashboard");
 
     } catch (error) {
 
-      console.log(error);
+      console.error(error);
 
       alert(
         error.response?.data?.message ||
-        "Login Failed"
+        "Something went wrong."
       );
+
+    } finally {
+
+      setLoading(false);
 
     }
 
@@ -91,9 +104,14 @@ const Login = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 w-full py-3 rounded"
+          disabled={loading}
+          className={`w-full py-3 rounded text-white ${
+            loading
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-blue-500 hover:bg-blue-600"
+          }`}
         >
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
 
       </form>

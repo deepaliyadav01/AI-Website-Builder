@@ -3,6 +3,8 @@ import API from "../services/api";
 
 const Register = () => {
 
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,14 +24,25 @@ const Register = () => {
 
     e.preventDefault();
 
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.password
+    ) {
+      alert("Please fill all fields.");
+      return;
+    }
+
     try {
+
+      setLoading(true);
 
       const res = await API.post(
         "/auth/register",
         formData
       );
 
-      alert("Registration Successful");
+      alert("Registration Successful!");
 
       console.log(res.data);
 
@@ -41,12 +54,16 @@ const Register = () => {
 
     } catch (error) {
 
-      console.log(error);
+      console.error(error);
 
       alert(
         error.response?.data?.message ||
-        "Something went wrong"
+        "Something went wrong."
       );
+
+    } finally {
+
+      setLoading(false);
 
     }
 
@@ -94,9 +111,14 @@ const Register = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 w-full py-3 rounded"
+          disabled={loading}
+          className={`w-full py-3 rounded text-white ${
+            loading
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-blue-500 hover:bg-blue-600"
+          }`}
         >
-          Register
+          {loading ? "Registering..." : "Register"}
         </button>
 
       </form>
