@@ -9,6 +9,7 @@ import userRoutes from "./routes/userRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import authMiddleware from "./middleware/authMiddleware.js";
+import errorMiddleware from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -57,6 +58,8 @@ app.get("/", (req, res) => {
   res.send("API Running");
 });
 
+// Global Error Middleware
+app.use(errorMiddleware);
 
 const PORT = process.env.PORT || 5000;
 
