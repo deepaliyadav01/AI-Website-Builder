@@ -21,7 +21,9 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://ai-website-builder-5yhxhsy5n-deepaliyadav01s-projects.vercel.app",
       "https://ai-website-builder-frontend-5yhxhsy5n-deepaliyadav01s-projects.vercel.app",
+      "https://ai-website-builder-frontend-git-main-deepaliyadav01s-projects.vercel.app",
     ],
     credentials: true,
   })
