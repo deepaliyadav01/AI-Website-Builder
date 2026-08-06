@@ -1,40 +1,82 @@
 # 🚀 AI Website Builder
 
-An AI-powered SaaS Website Builder that allows users to generate responsive websites from text prompts. Users can register, log in, generate websites, preview them live, and save projects using a credit-based system.
+> An AI-Powered SaaS Website Builder built with the MERN Stack that enables users to securely register, log in, manage projects, and generate responsive websites through an intuitive web interface.
 
 
 
-## ✨ Features
+# 🌐 Live Demo
 
-- 🔐 User Authentication (Register/Login)
-- 🤖 AI Website Generation
-- 💻 Live Website Preview
-- 💾 Save Generated Projects
-- 🪙 Credit-Based System
-- 📱 Fully Responsive UI
-- 📂 Project Dashboard
-- 🔒 Protected Routes (JWT Authentication)
+### 🔗 Website
+
+https://ai-website-builder-frontend-eight.vercel.app
 
 
 
-## 🛠️ Tech Stack
+# 📖 Overview
 
-### Frontend
-- React.js
-- Tailwind CSS
-- Axios
-- Vite
+AI Website Builder is a modern Full Stack SaaS application developed using React, Node.js, Express.js, and MongoDB.
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB
-- JWT Authentication
-- Mongoose
+The application provides a secure authentication system, protected dashboard, project management features, and an AI-ready architecture for future website generation capabilities.
+
+This project demonstrates modern Full Stack Development practices including Authentication, REST APIs, Database Integration, Deployment, and Responsive UI Design.
 
 
 
-## 📂 Project Structure
+# ✨ Features
+
+* Secure User Registration
+* JWT Authentication
+* Password Encryption using bcrypt
+* Login & Logout
+* Protected Routes
+* User Dashboard
+* Project Management
+* Website Generation 
+* Responsive Design
+* REST API Architecture
+* MongoDB Database
+* Production Deployment
+
+
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* React.js
+* Vite
+* Tailwind CSS
+* Axios
+* React Router DOM
+
+
+
+## Backend
+
+* Node.js
+* Express.js
+* JWT Authentication
+* bcryptjs
+* CORS
+
+
+
+## Database
+
+* MongoDB Atlas
+* Mongoose
+
+
+
+## Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+* GitHub
+
+
+
+# 📂 Project Structure
 
 ```text
 AI Website Builder
@@ -42,64 +84,180 @@ AI Website Builder
 ├── client
 │   ├── src
 │   ├── public
-│   └── package.json
+│   ├── components
+│   ├── pages
+│   ├── services
+│   └── assets
 │
 ├── server
+│   ├── config
 │   ├── controllers
+│   ├── middleware
 │   ├── models
 │   ├── routes
-│   ├── middleware
+│   ├── server.js
 │   └── package.json
 │
-└── README.md
+├── screenshots
+│
+├── README.md
+│
+└── .gitignore
 ```
 
 
 
-## ⚙️ Installation
+# 🔐 Authentication
 
-### Clone Repository
+The project implements secure authentication using JSON Web Tokens (JWT).
+
+Features include:
+
+* Password Hashing
+* Secure Login
+* Protected Routes
+* Token Based Authentication
+* User Session Management
+
+
+
+# 📡 API Modules
+
+* Authentication
+* User Management
+* Project Management
+* AI Website Generation
+
+
+
+# 🚀 Installation
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/deepaliyadav01/AI-Website-Builder.git
 ```
 
-### Install Client
+
+
+## Frontend
 
 ```bash
 cd client
+
 npm install
+
 npm run dev
 ```
 
-### Install Server
+
+
+## Backend
 
 ```bash
 cd server
+
 npm install
+
 npm run dev
 ```
 
 
 
-## 🔑 Environment Variables
+# ⚙ Environment Variables
 
-Create a `.env` file inside the `server` folder.
+Create your own environment variables before running the project.
+
+Example:
 
 ```env
-MONGO_URI=your_mongodb_url
-JWT_SECRET=your_secret
-OPENROUTER_API_KEY=your_api_key
+PORT=5000
+
+MONGO_URI=YOUR_MONGODB_URI
+
+JWT_SECRET=YOUR_SECRET_KEY
+
+VITE_API_URL=YOUR_BACKEND_API
 ```
 
 
 
-## 📸 Screenshots
+# 📸 Screenshots
 
-(Add screenshots after deployment.)
+## 🏠 Home Page
+
+![Home Page](screenshots/home.png)
 
 
 
-##  Developed By
+## 🔐 Login Page
+
+![Login Page](screenshots/login.png)
+
+
+
+## 📝 Register Page
+
+![Register Page](screenshots/register.png)
+
+
+
+## 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+
+
+## 🤖 AI Website Generation
+
+![Generate Website](screenshots/generate.png)
+
+
+
+## 💳 Pricing Page
+
+![Pricing](screenshots/pricing.png)
+
+
+
+# 📈 Future Enhancements
+
+* Payment Gateway Integration
+* One Click Deployment
+* Admin Dashboard
+* Team Collaboration
+* Email Verification
+* Password Reset
+
+
+
+# 🎯 Learning Outcomes
+
+This project demonstrates practical knowledge of:
+
+* React.js
+* Node.js
+* Express.js
+* MongoDB
+* JWT Authentication
+* REST APIs
+* Full Stack Development
+* Deployment using Render & Vercel
+* Git & GitHub
+* SaaS Application Development
+
+
+
+# 👩‍💻 Author
 
 **Deepali Yadav**
+
+MCA Student
+
+Aspiring Software Developer
+
+
+
+# ⭐ Show Your Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
