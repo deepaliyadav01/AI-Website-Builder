@@ -252,8 +252,6 @@ This project demonstrates practical knowledge of:
 
 **Deepali Yadav**
 
-MCA Student
-
 Aspiring Software Developer
 
 
